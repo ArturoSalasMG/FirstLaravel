@@ -1,0 +1,19 @@
+{
+    "name": "mrgero29/introduccion-frameworks",
+    "description": "Proyecto basico",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ArturoSalas"
+        } 
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    }
+}
