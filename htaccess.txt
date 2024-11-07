@@ -1,0 +1,20 @@
+Para los que trabajan con XAMPP, al momento de pasar los parámetros el servidor lo toma como una dirección ( no como parámetros) y te manda una página 404NotFound. Para resolverlo:
+
+    Crea un archivo .htaccess en la carpeta raíz del projecto (al mismo nivel del composer.json). Este es un archivo de texto que configura la forma en que tu servidor web responde a las peticiones de los usuarios.
+
+    Escribe en él la siguiente comfiguración:
+
+
+Options All -Indexes
+Options -MultiViews
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ public/index.php [QSA,L]
+
+Lo que hace este archivo es, indexar todos los archivos, acivar la opción de multiviews y configurar algunas cuestiones de redirección.
+
+En estos links puedes ampliar más tu conocimiento al respecto: https://youtu.be/pYDgl1NQZAY
+
+Ahora si te va funcionar el código :) espero haberte ahorrado 3 horas de debuggeo intenso y cuestionamiento de elección de carrera ajajajajaja
